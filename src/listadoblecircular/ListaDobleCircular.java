@@ -14,10 +14,11 @@ public class ListaDobleCircular {
         lista.inserta(new Persona(1, "Juan"));
         lista.inserta(new Persona(4, "Alberto"));
         lista.inserta(new Persona(3, "Cesar"));
+        lista.inserta(new Persona(5, "Cesar"));
         
         System.out.println(lista.toString());
         
-        System.out.println(lista.existe(2));
+        System.out.println(lista.existe(5));
         
     }
     

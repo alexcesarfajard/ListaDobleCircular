@@ -57,15 +57,22 @@ public class ListaDoble {
         boolean existe = false;
 
         if (cabeza != null) {
-            if (id >= cabeza.getDato().getId() && id <= cabeza.getDato().getId()) {
-                
-                Nodo aux = cabeza;
+            Nodo aux = cabeza;
 
-                while (aux != ultimo && aux.getDato().getId() <= id) {
+            if (id >= cabeza.getDato().getId() && id <= ultimo.getDato().getId()) {
+                while (aux != ultimo) {
+                    //System.out.println(aux.getSiguiente().getDato().getId());
+
+                    if (aux.getDato().getId() == id) {
+                        existe = true;
+                    }
                     aux = aux.getSiguiente();
                 }
-                existe = (aux.getDato().getId() == id);
+                if (aux.getDato().getId() == id) {
+                    existe = true;
+                }
             }
+
         } else {
             System.out.println("La lista está vacía");
         }
