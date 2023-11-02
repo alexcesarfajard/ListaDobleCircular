@@ -54,7 +54,25 @@ public class ListaDoble {
     }
     
     public String toString(){
+        String respuesta = "Lista doble circular \n";
         
+        if(cabeza != null) {
+            Nodo aux = cabeza;
+            
+            respuesta += aux.toString() + "\n";
+            aux = aux.getSiguiente();
+            
+            while (aux != cabeza) {                
+                respuesta += aux.toString() + "\n";
+                aux = aux.getSiguiente();
+            }
+            
+            
+        } else {
+            respuesta += "La lista está vacía";
+        }
+        
+        return respuesta;
     }
     
 }
