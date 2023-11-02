@@ -20,6 +20,10 @@ public class ListaDobleCircular {
         
         System.out.println(lista.existe(5));
         
+        lista.modifica(new Persona(5, "Nuevo nombre 5"));
+        
+        System.out.println(lista.toString());
+        
     }
     
 }

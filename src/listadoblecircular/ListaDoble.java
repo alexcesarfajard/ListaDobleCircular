@@ -80,6 +80,36 @@ public class ListaDoble {
         return existe;
     }
 
+    public void modifica(Persona p) {
+
+        if (cabeza != null) {
+            Nodo aux = cabeza;
+
+            if (p.getId() >= cabeza.getDato().getId() && p.getId() <= ultimo.getDato().getId()) {
+                while (aux != ultimo) {
+                    //System.out.println(aux.getSiguiente().getDato().getId());
+
+                    if (aux.getDato().getId() == p.getId()) {
+                        /*System.out.println("El id que ha pasado " + p.getId() + " nombre: " + p.getNombre() +
+                                " \n es igual al id: " + aux.getDato().getId() + " con el nombre " + aux.getDato().getNombre());
+                        */
+                        aux.getDato().setNombre(p.getNombre());
+                        
+                    }
+                    aux = aux.getSiguiente();
+                }
+                if (aux.getDato().getId() == p.getId()) {
+                    System.out.println("El ultimo nodo es el que se intenta modificar");
+                    aux.getDato().setNombre(p.getNombre());
+                }
+            }
+
+        } else {
+            System.out.println("La lista está vacía");
+        }
+
+    }
+
     public String toString() {
         String respuesta = "Lista doble circular \n";
 
