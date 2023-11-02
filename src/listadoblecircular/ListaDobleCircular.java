@@ -24,6 +24,10 @@ public class ListaDobleCircular {
         
         System.out.println(lista.toString());
         
+        lista.elimina(2);
+        
+        System.out.println(lista.toString());
+        
     }
     
 }

@@ -92,15 +92,45 @@ public class ListaDoble {
                     if (aux.getDato().getId() == p.getId()) {
                         /*System.out.println("El id que ha pasado " + p.getId() + " nombre: " + p.getNombre() +
                                 " \n es igual al id: " + aux.getDato().getId() + " con el nombre " + aux.getDato().getNombre());
-                        */
+                         */
                         aux.getDato().setNombre(p.getNombre());
-                        
+
                     }
                     aux = aux.getSiguiente();
                 }
                 if (aux.getDato().getId() == p.getId()) {
                     System.out.println("El ultimo nodo es el que se intenta modificar");
                     aux.getDato().setNombre(p.getNombre());
+                }
+            }
+
+        } else {
+            System.out.println("La lista está vacía");
+        }
+
+    }
+
+    public void elimina(int id) {
+
+        if (cabeza != null) {
+            Nodo aux = cabeza;
+
+            if (id >= cabeza.getDato().getId() && id <= ultimo.getDato().getId()) {
+                //si el id pertenece al primer nodo
+                if (cabeza.getDato().getId() == id) {
+                    System.out.println("El ID que pasamos es igual al primero");
+                    
+                    cabeza = cabeza.getSiguiente();
+                    ultimo.setSiguiente(cabeza);
+                    
+                } else {
+                    //si el id es en medio
+                    while (aux != ultimo) {                        
+                        if(aux.getDato().getId() == id){
+                            System.out.println("Encontramos el ID");
+                        }
+                        aux = aux.getSiguiente();
+                    }
                 }
             }
 
